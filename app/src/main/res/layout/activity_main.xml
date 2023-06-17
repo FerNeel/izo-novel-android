@@ -78,6 +78,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/input_novel"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:background="@drawable/border"

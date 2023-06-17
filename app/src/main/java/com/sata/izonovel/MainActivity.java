@@ -2,6 +2,7 @@ package com.sata.izonovel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -12,7 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    TextView menuFavorite, menuInfoPengguna, menuDaftarNovel;
+    TextView menuFavorite, menuInfoPengguna, menuDaftarNovel, inputnovel;
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent intent = new Intent(MainActivity.this, DaftarNovelActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
+
+        inputnovel = findViewById(R.id.input_novel);
+        inputnovel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent) {
+                Intent intent = new Intent(MainActivity.this, FormInptActivity.class);
                 startActivity(intent);
                 return false;
             }
